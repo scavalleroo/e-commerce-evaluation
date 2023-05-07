@@ -26,6 +26,27 @@
           gtag('config', 'G-LF9MZXY1QB');
         </script>
         <script src="https://www.googleoptimize.com/optimize.js?id=OPT-NN8FH7S"></script>
+        // Function to send the value to Google Optimize
+        <script>
+        function sendToGoogleOptimize(value) {
+          // Check if the Google Optimize library is loaded
+          if (typeof window.gtag !== "function") {
+            console.log("Google Optimize library not loaded.");
+            return;
+          }
+
+          // Send the value to Google Optimize
+          window.gtag("event", "optimize.callback", {
+            name: "my_experiment",
+            callback: function() {
+              window.gtag("event", "optimize.metric", {
+                name: "my_metric",
+                value: value  // New line of code: Send the value to Google Optimize
+              });
+            }
+          });
+        }
+        </script>
     </head>
     <body>
         <!-- Navigation-->
