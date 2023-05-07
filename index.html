@@ -370,6 +370,12 @@
             function increaseNumberCart() {
                 let numberCart = parseInt(document.getElementById("number_cart").innerText);
                 document.getElementById("number_cart").innerText = (numberCart + 1).toString();
+                    // Send value to Google Optimize
+            dataLayer.push({
+              'event': 'optimize.activate',
+              'name': 'increase_cart',
+              'cart_value': numberCart + 1
+            });
             }
         </script>
 
