@@ -30,6 +30,9 @@
         <script src="https://www.googleoptimize.com/optimize.js?id=OPT-NN8FH7S"></script>
         <!-- Function to send the value to Google Optimize -->
         <script>
+
+          var EXPERIMENT_VARIANT_ID = 1;
+
           // Google Analytics function to send "event add_to_cart"
           function sendAddToCartEvent(productName, price) {
             // Replace 'YOUR_GA_TRACKING_ID' with your actual Google Analytics tracking ID
@@ -40,7 +43,7 @@
             });
 
             gtag('event', 'experiment_variant_id', {
-              'value': 1
+              'value': EXPERIMENT_VARIANT_ID,
             });
           }
         </script>
