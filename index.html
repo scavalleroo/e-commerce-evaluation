@@ -42,6 +42,8 @@
               'value': price,
               'experiment_variant_id': EXPERIMENT_VARIANT_ID.toString()
             });
+              
+            console.log("Experiment ID " + EXPERIMENT_VARIANT_ID.toString());
 
             gtag('event', 'experiment_variant_id', {
               'experiment_variant_id': EXPERIMENT_VARIANT_ID.toString(),
