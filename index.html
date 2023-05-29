@@ -39,7 +39,8 @@
             gtag('event', 'add_to_cart', {
               'event_category': 'ecommerce',
               'event_label': productName,
-              'value': price
+              'value': price,
+              'experiment_variant_id': EXPERIMENT_VARIANT_ID.toString()
             });
 
             gtag('event', 'experiment_variant_id', {
