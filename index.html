@@ -52,7 +52,7 @@
           google_optimize.get('uXt8Z2NyQZqeDXdgz7Z2Mw');
             
           function implementManyExperiments(value, name) {
-            EXPERIMENT_VARIANT_ID = value + 1;
+            EXPERIMENT_VARIANT_ID = parseInt(value) + 1;
           }
 
           gtag('event', 'optimize.callback', {
