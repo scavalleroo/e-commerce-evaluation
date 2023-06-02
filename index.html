@@ -30,7 +30,6 @@
         <script src="https://www.googleoptimize.com/optimize.js?id=OPT-NN8FH7S"></script>
         <!-- Function to send the value to Google Optimize -->
         <script>
-
           var EXPERIMENT_VARIANT_ID = 1;
 
           // Google Analytics function to send "event add_to_cart"
@@ -44,6 +43,12 @@
             });
               
             console.log("Experiment ID " + EXPERIMENT_VARIANT_ID.toString());
+              
+            var propertyId = "UA-2892300-44";
+            var experimentId = Object.keys(gaData[propertyId].experiments)[0];
+            var variationId = gaData[propertyId].experiments[experimentId];
+              
+            console.log("Property ID: " + propertyId);
 
             gtag('event', 'experiment_variant_id', {
               'experiment_variant_id': EXPERIMENT_VARIANT_ID.toString(),
