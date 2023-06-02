@@ -43,17 +43,20 @@
             });
               
             console.log("Experiment ID " + EXPERIMENT_VARIANT_ID.toString());
-              
-            var propertyId = "UA-2892300-44";
-            var experimentId = Object.keys(gaData[propertyId].experiments)[0];
-            var variationId = gaData[propertyId].experiments[experimentId];
-              
-            console.log("Property ID: " + propertyId);
 
             gtag('event', 'experiment_variant_id', {
               'experiment_variant_id': EXPERIMENT_VARIANT_ID.toString(),
             });
           }
+            
+          function implementManyExperiments(value, name) {
+            console.log("Value: " + value);
+            console.log("Name: " + name);
+          }
+
+          gtag('event', 'optimize.callback', {
+            callback: implementManyExperiments
+          });
         </script>
     </head>
     <body>
